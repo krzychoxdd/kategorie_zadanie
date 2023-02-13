@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('set-locale')->group(function() {
+    Route::get('/categories/list', [CategoryController::class, 'list']);
+    Route::post('/categories/create', [CategoryController::class, 'create']);
 });
