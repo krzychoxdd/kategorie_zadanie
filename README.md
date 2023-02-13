@@ -8,6 +8,7 @@ Plik .env.example został skonfigurowany pod poniższy opis instalacji. Do insta
 ```
 git clone https://github.com/krzychoxdd/kategorie_zadanie.git
 cd kategorie_zadanie
+mv .env.example .env
 composer install
 
 make dbinstall
